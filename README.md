@@ -34,7 +34,7 @@ A simple, modern, and responsive Android app displaying live and cached crypto p
 - **MVVM** (Architecture)
 - **Room** (Local Database)
 - **Koin** (Dependency Injection)
-- **Retrofit** (Networking)
+- **Ktor** (Networking)
 - **Binance Public API**
 - **StateFlow** & **Coroutines**
 
@@ -48,3 +48,7 @@ A simple, modern, and responsive Android app displaying live and cached crypto p
 3. Search bar lets you filter by symbol or coin
 4. Pull-to-refresh is available anytime
 5. Online / Offline status is displayed under the search bar
+
+6.<img src="https://github.com/user-attachments/assets/867ea078-64fc-43d3-b12d-6d4180a83e07" width="400"/>
+
+

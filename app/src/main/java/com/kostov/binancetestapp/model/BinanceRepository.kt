@@ -8,15 +8,16 @@ class BinanceRepository(
     private val api: BinanceApi,
     private val dao: BinanceDao
 ) {
+
     suspend fun fetchAndCacheCryptoTrades(): List<BinanceEntity> {
-        return try {
-            val remoteData = api.fetchTrades()
-            val entities = remoteData.map { it.toEntity() }
-            dao.insertAll(entities)
-            entities
-        } catch (_: Exception) {
-            dao.getAll()
-        }
+        val remoteData = api.fetchTrades()
+        val entities = remoteData.map { it.toEntity() }
+        dao.insertAll(entities)
+        return entities
+    }
+
+    suspend fun getCachedTrades(): List<BinanceEntity> {
+        return dao.getAll()
     }
 
     fun BinanceDto.toEntity() = BinanceEntity(

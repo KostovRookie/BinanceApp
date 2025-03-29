@@ -1,18 +1,18 @@
 package com.kostov.binancetestapp.model.remote.api
 
-import io.ktor.client.*
-import io.ktor.client.call.*
-import io.ktor.client.request.*
-import io.ktor.http.*
 import com.kostov.binancetestapp.model.BinanceDto
+import com.kostov.binancetestapp.utils.Constants
+import io.ktor.client.HttpClient
+import io.ktor.client.call.body
+import io.ktor.client.request.get
+import io.ktor.http.ContentType
+import io.ktor.http.contentType
 
 
-class BinanceApiImpl(
-    private val client: HttpClient
-) : BinanceApi {
+class BinanceApiImpl(private val client: HttpClient) : BinanceApi {
 
     override suspend fun fetchTrades(): List<BinanceDto> {
-        return client.get("https://api2.binance.com/api/v3/ticker/24hr") {
+        return client.get(Constants.BASE_URL) {
             contentType(ContentType.Application.Json)
         }.body()
     }

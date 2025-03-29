@@ -32,5 +32,5 @@ val appModule = module {
 
     single { BinanceRepository(get(), get()) }
 
-    viewModel { BinanceViewModel(get()) }
+    viewModel { BinanceViewModel(get(), get()) }
 }

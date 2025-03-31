@@ -49,7 +49,6 @@ dependencies {
     androidTestImplementation(composeBom)
 
     implementation(libs.androidx.compose.material3.material3)
-    //implementation(libs.androidx.material3.pullrefresh)
     implementation(libs.androidx.compose.material3.material32)
 
     implementation(libs.activity.compose)
@@ -86,4 +85,11 @@ dependencies {
 
     // Coil for image loading (optional)
     implementation(libs.coil.compose)
+
+    //For tests
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
+    testImplementation(libs.koin.test)
+    testImplementation(libs.koin.test.junit4)
 }
